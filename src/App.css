@@ -1,0 +1,27 @@
+.App {
+  text-align: center;
+}
+
+body {
+  background-color: #222;
+  color: yellow;
+}
+
+h1 {
+  font-size: 8vw
+}
+h2 {
+  font-size: 10vw;;
+  font-weight: bold;
+  color: goldenrod;
+}
+
+div#call-counter {
+  font-size: 3vw;
+  color:#ccf;
+}
+
+@media screen and (max-width: 600px) {
+  h1 { font-size: 6vw }
+  h2 { font-size: 18vw }
+}
