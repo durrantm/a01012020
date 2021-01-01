@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import './App.css';
 import axios from 'axios'
 function App() {
   const [currentBTCprice, setCurrentBTCprice] = useState('');
   const [calls, setCalls] = useState(0);
 
-  const getData = () => {
+  const getData = useCallback(() => {
     const itBitHost = 'https://api.itbit.com/v1/';
     axios.get(itBitHost + 'markets/XBTUSD/ticker')
       .then(function (response) {
         const bid = Number(response.data.bid).toFixed(2);
         setCurrentBTCprice(bid);
-        setCalls(calls + 1);
+        setCalls(c => c + 1);
       })
       .catch(function (e) {
         console.log(e);
       });
-  };
+  }, []);
 
   useEffect(() => {
     getData();
@@ -24,7 +24,7 @@ function App() {
     return () => {
       clearInterval(interval);
     }
-  }, [currentBTCprice]);
+  }, [getData]);
 
   return (
     <div className="App">
