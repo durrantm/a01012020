@@ -1,4 +1,4 @@
-Budget: $100
+Budget: $120
 
 Fix React dependency array for useEffect in a sample app that fetches BTC price from the Paxos cryptocurrency exchange and updates number of API calls made.
 
