@@ -1,4 +1,7 @@
 # a01012020
+
+Budget: $100
+
 Fix React dependency array for useEffect in a sample app that fetches BTC price and updates number of API calls made.
 
 The app is intended to get the btc price every x second (e.g. 2 as currently set).
@@ -12,7 +15,7 @@ For instance VScode is currently giving a warning about not having "getData" in 
 - I break the app with a different error
 - The app no longer updates.
 
-Also I notice that the "#calls" counter is not increasing every two seconds.
+Also I notice that the "#calls" counter is not increasing every two seconds consitently, only when the price changes.  I also tried adding that to the dependency array and got similar and even worse errors and runaway infinite calls.
 
 
 Your task is to address these issues.  
@@ -25,7 +28,7 @@ The requirements are:
 
 This is a code only request, not for a pairing session.
 
-I'm paying more than my previous becuase I need tests.
+I'm paying more than my previous becuase I want good tests.
 
-Your biggest challenge may be in avoiding the infinite calls and API blocking while testing so be careful.
+Your biggest challenge may be in avoiding the infinite calls and API blocking issue while testing so be careful!
 The good news is that the API is public and no keys are needed so I don't need to give you any.
