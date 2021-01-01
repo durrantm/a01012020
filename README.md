@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+Budget: $100
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Fix React dependency array for useEffect in a sample app that fetches BTC price and updates number of API calls made.
 
-## Available Scripts
+The app is intended to get the btc price every x second (e.g. 2 as currently set).
 
-In the project directory, you can run:
+The app works and the current test (App) pass.
 
-### `yarn start`
+I am having trouble getting the dependency aray for useEffect correct though. App.js, line 27 For instance VScode is currently giving a warning about not having "getData" in there but when I add getData or replace current with it, either:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+i get runaway infinite API calls. This is not good and if not caught in second will then lead to API blocking with 403's for a few minutes.
+I break the app with a different error
+The app no longer updates.
+Also I notice that the "#calls" counter is not increasing every two seconds consitently, only when the price changes. I also tried adding that to the dependency array and got similar and even worse errors and runaway infinite calls.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Your task is to address these issues.
+The requirements are:
 
-### `yarn test`
+- A PR
+- working code
+- explanation / suggestions
+- tests to cover the code
+- no linting changes in the PR please
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This is a code only request, not for a pairing session.
 
-### `yarn build`
+I'm paying more than my previous becuase I want good tests.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Your biggest challenge may be in avoiding the infinite calls and API blocking issue while testing so be careful! The good news is that the API is public and no keys are needed so I don't need to give you any.
